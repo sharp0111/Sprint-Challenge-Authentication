@@ -27,8 +27,6 @@ UserSchema.pre('save', function(next) {
   // Once the password is encrypted, call next() so that your userController and create a user
   bcrypt.hash(this.password, SALT_ROUNDS, (error, hash) => {
     if (error) return next(error);
-    // console.log(this.password);
-    // console.log(hash);
     this.password = hash;
     next();
   });
