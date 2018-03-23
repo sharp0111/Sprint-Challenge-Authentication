@@ -11,7 +11,8 @@ class Jokes extends Component {
     return (
       <ul>
         {this.props.jokes.map((joke, i) => {
-          return <li key={i}>{joke.punchline}</li>;
+          return <li key={i}><h4>{joke.setup}</h4>
+          <p>{joke.punchline}</p></li>;
         })}
       </ul>
     );
